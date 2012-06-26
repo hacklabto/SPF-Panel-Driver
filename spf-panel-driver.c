@@ -272,6 +272,7 @@ set_serial_ops (void)
 
   // Local, enabled, 8n1 
 
+  options.c_lflag &= ~(ECHO | ICANON);
   options.c_cflag |= (CLOCAL | CREAD);
   options.c_cflag &= ~PARENB;
   options.c_cflag &= ~CSTOPB;
